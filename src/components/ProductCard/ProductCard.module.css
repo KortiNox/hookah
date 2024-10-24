@@ -1,0 +1,70 @@
+.head {
+  position: relative;
+  min-height: 200px;
+  border-radius: 20px;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+.card {
+  background: var(#de7777);
+  width: 320px;
+}
+
+.footer {
+  padding: 12px;
+}
+.title {
+  color: var(--text-color);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-decoration: none;
+}
+.description {
+  color: var(--text-secondary-color);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  text-decoration: none;
+}
+.price {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--white-color);
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: var(--text-color);
+}
+.rating {
+  position: absolute;
+  bottom: -12px;
+  left: 15px;
+  background: var(--white-color);
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.add-to-card {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: none;
+}
+.add-to-card:hover {
+  background: var(--primary-color-hover);
+}
+.link {
+  text-decoration: none;
+}
