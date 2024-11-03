@@ -12,6 +12,8 @@ import { PREFIX } from './helpers/API.js';
 import { AuthLayout } from './Layout/Auth/AuthLayout.js';
 import { Login } from './pages/Login/Login.js';
 import { Register } from './pages/Register/Register.js';
+import { Provider } from 'react-redux';
+import { store } from './store/store.js';
 
 const Menu = lazy(() => import('./pages/Menu/Menu'));
 
@@ -71,7 +73,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
-    <App />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+      <App />
+    </Provider>
   </StrictMode>,
 );

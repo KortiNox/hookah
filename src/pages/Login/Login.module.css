@@ -1,0 +1,42 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 500px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label {
+  color: #c4c4c4;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--text-secondary-color);
+  font-size: 16px;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.error {
+  background: rgb(200, 64, 64);
+  color: white;
+  padding: 20px;
+}

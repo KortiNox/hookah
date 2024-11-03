@@ -16,6 +16,33 @@
   justify-content: center;
 }
 .loginImage {
-  width: 52px;
-  height: 52px;
+  width: 30%;
+}
+
+.logoHookah {
+  color: coral;
+}
+.transparent-text {
+  font-family: 'Rubik One', sans-serif;
+  font-size: 50px;
+  text-transform: uppercase;
+  background: #2e2f45;
+  display: table;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+  mix-blend-mode: multiply;
+  padding: 5px 10px;
+}
+.text {
+  font-family: 'Rubik One', sans-serif;
+  font-size: 30px;
+  display: table;
+  background: rgb(255, 255, 255);
+  text-transform: uppercase;
+  margin: 20px auto;
+  color: rgb(0, 0, 0);
+  border-radius: 35px;
+  mix-blend-mode: multiply;
+  padding: 5px 10px;
 }

@@ -2,8 +2,15 @@ import cn from 'classnames';
 import { Outlet, NavLink } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import styles from './Layout.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export function Layout() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate('/auth/login');
+  };
+
   return (
     <div className={styles['layout']}>
       <div className={styles['sidebar']}>
@@ -30,7 +37,7 @@ export function Layout() {
             Корзина
           </NavLink>
         </div>
-        <Button className={styles['exit']}>
+        <Button className={styles['exit']} onClick={handleLogout}>
           <img className={styles['icon']} src="/exit-icon.svg" alt="exit-svg"></img>
           Выход
         </Button>
