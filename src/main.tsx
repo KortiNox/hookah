@@ -1,7 +1,6 @@
 import { lazy, StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import App from './App.js';
 import './index.css';
 import { Cart } from './pages/Cart/Cart';
 import { Error as ErrorPage } from './pages/Error/Error';
@@ -75,7 +74,6 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
-      <App />
     </Provider>
   </StrictMode>,
 );

@@ -3,9 +3,12 @@ import { Outlet, NavLink } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import styles from './Layout.module.css';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 export function Layout() {
   const navigate = useNavigate();
+  const items = useSelector((s: RootState) => s.cart.items);
 
   const handleLogout = () => {
     navigate('/auth/login');
@@ -34,7 +37,7 @@ export function Layout() {
             className={({ isActive }) => cn(styles['link'], { [styles.active]: isActive })}
           >
             <img className={styles['icon']} src="/cart-icon.svg" alt="cart-svg"></img>
-            Корзина
+            Корзина {items.reduce((acc, item) => (acc += item.count), 0)}
           </NavLink>
         </div>
         <Button className={styles['exit']} onClick={handleLogout}>
