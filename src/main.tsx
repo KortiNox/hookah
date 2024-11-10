@@ -13,6 +13,7 @@ import { Login } from './pages/Login/Login.js';
 import { Register } from './pages/Register/Register.js';
 import { Provider } from 'react-redux';
 import { store } from './store/store.js';
+import Tobacco from './pages/Tobacco/Tobacco';
 
 const Menu = lazy(() => import('./pages/Menu/Menu'));
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+      },
+      {
+        path: '/tobacco',
+        element: <Tobacco />,
       },
 
       {

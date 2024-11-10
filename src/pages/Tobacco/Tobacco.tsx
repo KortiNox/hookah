@@ -3,11 +3,12 @@ import Headling from '../../components/Headling/Headling';
 import { Search } from '../../components/Search/Search';
 import { PREFIX } from '../../helpers/API';
 import { Product } from '../../interfaces/product.interface';
-import styles from './Menu.module.css';
+import styles from './Tobacco.module.css';
 import axios, { AxiosError } from 'axios';
-import { MenuList } from './MenuList/MenuList';
 
-export function Menu() {
+import { TobaccoList } from './TobaccoList/TobaccoList';
+
+export function Tobacco() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | undefined>();
@@ -21,7 +22,7 @@ export function Menu() {
     try {
       setIsLoading(true);
 
-      const { data } = await axios.get<Product[]>(`${PREFIX}/items`, {
+      const { data } = await axios.get<Product[]>(`${PREFIX}/Tobacco`, {
         params: { name },
       });
 
@@ -33,7 +34,6 @@ export function Menu() {
         console.log(error);
         setError(e.message);
       }
-
       setIsLoading(false);
       return;
     }
@@ -45,12 +45,12 @@ export function Menu() {
   return (
     <>
       <div className={styles['head']}>
-        <Headling>Menu</Headling>
-        <Search placeholder="Введите фирму или вкус" onChange={updateFilter}></Search>
+        <Headling>Tobacco</Headling>
+        <Search placeholder="Поиск табака" onChange={updateFilter}></Search>
       </div>
       <div>
         {/*error && <>{'Не найдено'}</>*/}
-        {!isLoading && products.length > 0 && <MenuList products={products} />}
+        {!isLoading && products.length > 0 && <TobaccoList products={products} />}
         {isLoading && <>Загрузка...</>}
         {!isLoading && products.length === 0 && <>Не найдено 2</>}
       </div>
@@ -58,4 +58,4 @@ export function Menu() {
   );
 }
 
-export default Menu;
+export default Tobacco;

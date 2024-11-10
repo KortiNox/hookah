@@ -31,6 +31,13 @@ export function Layout() {
             <img className={styles['icon']} src="/menu-icon.svg" alt="menu-svg"></img>
             Меню
           </NavLink>
+          <NavLink
+            to="/tobacco"
+            className={({ isActive }) => cn(styles['link'], { [styles.active]: isActive })}
+          >
+            <img className={styles['icon']} src="/tobacco.svg" alt="cart-svg"></img>
+            Табак
+          </NavLink>
 
           <NavLink
             to="/cart"
