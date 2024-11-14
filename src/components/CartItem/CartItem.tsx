@@ -4,15 +4,20 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store/store';
 import { cartActions } from '../../store/cart.slice';
 
+import { useNavigate } from 'react-router-dom';
+
 function CartItem(props: CartItemProps): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();
 
-  const increase = () => {
-    dispatch(cartActions.add(props.id));
+  const remove = () => {
+    dispatch(cartActions.remove(props.id));
   };
 
-  const decriase = () => {};
-  const remove = () => {};
+  const navigate = useNavigate();
+
+  const handleDetailsClick = () => {
+    navigate(`/product/${props.id}`); // маршрут для продукта
+  };
 
   return (
     <div className={styles['item']}>
@@ -21,15 +26,12 @@ function CartItem(props: CartItemProps): JSX.Element {
         <div className={styles['name']}>{props.name}</div>
         <div className={styles['price']}>{props.price}</div>
       </div>
-      <div className={styles['action']}>
-        <button className={styles['button']} onClick={decriase}>
-          <img src="/cart-button-icon.svg" alt="Удалить" className={styles['icon']}></img>
+      <div className={styles['actions']}>
+        <button className={styles['remove']} onClick={remove}>
+          Удалить
         </button>
-        <button className={styles['add-to-card']} onClick={increase}>
-          <img src="/cart-button-icon.svg" alt="Добавить" className={styles['icon']}></img>
-        </button>
-        <button className={styles['add-to-card']} onClick={remove}>
-          <img src="/cart-button-icon.svg" alt="Удалить все" className={styles['icon']}></img>
+        <button className={styles['remove']} onClick={handleDetailsClick}>
+          Подробнее
         </button>
       </div>
 

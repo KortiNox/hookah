@@ -7,6 +7,7 @@ import { RootState } from '../../store/store';
 import { Product } from '../../interfaces/product.interface';
 import axios from 'axios';
 import { PREFIX } from '../../helpers/API';
+import styles from './Cart.module.css';
 
 export function Cart() {
   const [cartProducts, setCartProducts] = useState<Product[]>([]);
@@ -39,14 +40,14 @@ export function Cart() {
 
   return (
     <>
-      <Headling>Избранное </Headling>{' '}
+      <Headling className={styles['headling']}>Избранное </Headling>
       {items.map((i) => {
         const product = cartProducts.find((p) => p.id === i.id);
         if (!product) {
           console.warn(`Продукт с id ${i.id} не найден`);
           return;
         }
-        return <CartItem id={i.id} {...product} />;
+        return <CartItem key={product.id} id={i.id} {...product} />;
       })}
     </>
   );

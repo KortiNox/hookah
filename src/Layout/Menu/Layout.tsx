@@ -19,8 +19,8 @@ export function Layout() {
       <div className={styles['sidebar']}>
         <div className={styles['user']}>
           <img className={styles['avatar']} src="/avatar.svg" alt="avatar"></img>
-          <div className={styles['name']}>Имя Пользвателя</div>
-          <div className={styles['email']}>Artemkorolevv@mail.ru</div>
+          <div className={styles['name']}>Анонимный Пользватель</div>
+          <div className={styles['email']}>TG: KortNox</div>
         </div>
 
         <div className={styles['menu']}>
@@ -29,7 +29,7 @@ export function Layout() {
             className={({ isActive }) => cn(styles['link'], { [styles.active]: isActive })}
           >
             <img className={styles['icon']} src="/menu-icon.svg" alt="menu-svg"></img>
-            Меню
+            Миксы
           </NavLink>
           <NavLink
             to="/tobacco"
@@ -44,7 +44,7 @@ export function Layout() {
             className={({ isActive }) => cn(styles['link'], { [styles.active]: isActive })}
           >
             <img className={styles['icon']} src="/cart-icon.svg" alt="cart-svg"></img>
-            Корзина {items.reduce((acc, item) => (acc += item.count), 0)}
+            Закладки {items.reduce((acc, item) => (acc += item.count), 0)}
           </NavLink>
         </div>
         <Button className={styles['exit']} onClick={handleLogout}>

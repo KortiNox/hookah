@@ -46,7 +46,7 @@ export function Menu() {
     <>
       <div className={styles['head']}>
         <Headling>Menu</Headling>
-        <Search placeholder="Введите фирму или вкус" onChange={updateFilter}></Search>
+        <Search placeholder="Введите микс" onChange={updateFilter}></Search>
       </div>
       <div>
         {/*error && <>{'Не найдено'}</>*/}
