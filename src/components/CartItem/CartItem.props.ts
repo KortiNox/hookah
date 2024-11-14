@@ -5,4 +5,7 @@ export interface CartItemProps {
   image: string;
   price: number;
   count?: number;
+  flavor?: string;
+  strong?: string;
+  category?: string;
 }

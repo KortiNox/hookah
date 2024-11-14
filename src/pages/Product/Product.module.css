@@ -1,0 +1,107 @@
+.mix {
+  align-items: flex-start;
+  margin: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+
+  flex-direction: column;
+}
+.head {
+  position: relative;
+  min-height: 300px;
+  max-width: 520px;
+  border-radius: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+}
+.card {
+  width: 100%;
+}
+
+.top {
+  padding: 5px;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+.top p {
+  margin: 5px;
+}
+
+.footer {
+  display: flex;
+  padding: 32px;
+}
+.name {
+  color: var(--text-color);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-decoration: none;
+}
+.description {
+  color: var(--text-secondary-color);
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  text-decoration: none;
+}
+.price {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--white-color);
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: var(--text-color);
+}
+.rating {
+  position: absolute;
+  bottom: -12px;
+  left: 15px;
+  background: var(--white-color);
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.add-to-card {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: var(--primary-color);
+  border-radius: 30px;
+  width: 150px;
+  height: 45px;
+  border: none;
+}
+
+.text-card {
+  font-size: 14px;
+  align-items: center;
+}
+.add-to-card:hover {
+  background: var(--primary-color-hover);
+}
+.link {
+  text-decoration: none;
+}
+.flavor {
+  color: var(--text-color);
+  font-size: 24px;
+  font-weight: 600;
+}

@@ -1,8 +1,7 @@
-export interface Product {
+export interface Tobacco {
   id: number;
   name: string;
   description: string[];
-  rating: number;
   price: number;
   image: string;
 }

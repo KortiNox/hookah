@@ -1,4 +1,4 @@
-import { Tobacco } from '../../../interfaces/product.interface';
+import { Tobacco } from '../../../interfaces/tobacco.interface';
 
 export interface TobaccoListProps {
   products: Tobacco[];

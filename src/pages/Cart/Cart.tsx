@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import CartItem from '../../components/CartItem/CartItem';
-
 import Headling from '../../components/Headling/Headling';
 import { RootState } from '../../store/store';
 import { Product } from '../../interfaces/product.interface';

@@ -3,7 +3,6 @@ import { CartItemProps } from './CartItem.props';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store/store';
 import { cartActions } from '../../store/cart.slice';
-
 import { useNavigate } from 'react-router-dom';
 
 function CartItem(props: CartItemProps): JSX.Element {
