@@ -14,6 +14,7 @@ import { Register } from './pages/Register/Register.js';
 import { Provider } from 'react-redux';
 import { store } from './store/store.js';
 import Tobacco from './pages/Tobacco/Tobacco';
+import { TobaccoBigCard } from './pages/TobaccoBigCard/TobaccoBigCard';
 
 const Menu = lazy(() => import('./pages/Menu/Menu'));
 
@@ -37,6 +38,15 @@ const router = createBrowserRouter([
       {
         path: '/tobacco',
         element: <Tobacco />,
+      },
+      {
+        path: '/tobacco/:id',
+        element: <TobaccoBigCard />,
+        errorElement: <>Ошибка </>,
+        loader: async ({ params }) => {
+          const { data } = await axios.get(`${PREFIX}/Tobacco?id=${params.id}`);
+          return data;
+        },
       },
 
       {

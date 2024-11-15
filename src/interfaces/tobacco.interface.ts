@@ -1,4 +1,4 @@
-export interface Tobacco {
+export interface TobaccoInterface {
   id: number;
   name: string;
   description: string[];

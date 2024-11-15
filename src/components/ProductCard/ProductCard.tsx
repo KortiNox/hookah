@@ -1,34 +1,39 @@
 import styles from './ProductCard.module.css';
 import { ProductCartProps } from './ProductCard.props';
 import { Link } from 'react-router-dom';
-import { MouseEvent } from 'react';
-import { useDispatch } from 'react-redux';
+import { MouseEvent, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../store/store';
 import { cartActions } from '../../store/cart.slice';
+import { RootState } from '../../store/store'; // Импортируйте RootState для использования useSelector
 
 function ProductCard(props: ProductCartProps) {
   const dispatch = useDispatch<AppDispatch>();
+  const cartItems = useSelector((state: RootState) => state.cart.items); // Получите элементы корзины
+  const [isAdded, setIsAdded] = useState(cartItems.some((item) => item.id === props.id)); // Проверяем, добавлен ли товар в корзину
 
   const add = (e: MouseEvent) => {
     e.preventDefault();
-    dispatch(cartActions.add(props.id));
+    if (!isAdded) {
+      dispatch(cartActions.add(props.id));
+      setIsAdded(true);
+    }
   };
+
   return (
     <Link to={`/product/${props.id}`} className={styles['link']}>
       <div className={styles['card']}>
         <div className={styles['head']} style={{ backgroundImage: `url('${props.image}')` }}>
           <div className={styles['price']}>{props.price}</div>
-          <button className={styles['add-to-card']} onClick={add}>
-            <img
-              src="/cart-button-icon.svg"
-              alt="Добавить"
-              title="Добавить в закладки"
-              className={styles['icon']}
-            ></img>
+          <button
+            className={`${styles['add-to-card']} ${isAdded ? styles['added'] : ''}`} // Применяем класс added
+            onClick={add}
+          >
+            {isAdded ? 'Добавлено в закладки' : <div className={styles['plus']}>+</div>}
           </button>
           <div className={styles['rating']}>
             {props.rating}&nbsp;
-            <img src="/star-icon.svg" alt="Рейтинг" className={styles['icon']}></img>
+            <img src="/star-icon.svg" alt="Рейтинг" className={styles['icon']} />
           </div>
         </div>
 

@@ -1,8 +1,9 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLoaderData } from 'react-router-dom';
 import { Product } from '../../interfaces/product.interface';
 import { cartActions } from '../../store/cart.slice';
 import { AppDispatch } from '../../store/store';
+import { RootState } from '../../store/store'; // RootState для использования useSelector
 import styles from './Product.module.css';
 
 export function Product() {
@@ -10,8 +11,16 @@ export function Product() {
   const product = data[0];
 
   const dispatch = useDispatch<AppDispatch>();
+  const cartItems = useSelector((state: RootState) => state.cart.items); // Получаем элементы корзины
+
+  // Проверяем, находится ли товар в корзине
+  const isInCart = cartItems.some((item) => item.id === product.id);
+
   const add = (e: React.MouseEvent<HTMLButtonElement>) => {
-    dispatch(cartActions.add(product.id));
+    if (!isInCart) {
+      dispatch(cartActions.add(product.id));
+      console.log(e);
+    }
   };
 
   return (
@@ -21,22 +30,23 @@ export function Product() {
           <p>Микс - {product.name}</p>
           <p>Крепость - {product.strong}</p>
           <p>Категория - {product.category}</p>
+          <p>Цена забивки (20гр) - {product.price} руб</p>
         </div>
         <div className={styles['card']}>
           <div className={styles['head']} style={{ backgroundImage: `url('${product.image}')` }}>
             <div className={styles['price']}>{product.price}</div>
-            <button className={styles['add-to-card']} onClick={add}>
-              <p className={styles['text-card']}>Добавить в закладки</p>
-              <img
-                src="/cart-button-icon.svg"
-                alt="Добавить"
-                title="Добавить в закладки"
-                className={styles['icon']}
-              ></img>
+            <button
+              className={`${styles['add-to-card']} ${isInCart ? styles['added'] : ''}`} // Применяем класс disabled
+              onClick={add}
+              disabled={isInCart} // Устанавливаем атрибут disabled
+            >
+              <p className={styles['text-card']}>
+                {isInCart ? 'Добавлено в закладки' : 'Добавить в закладки'}
+              </p>
             </button>
             <div className={styles['rating']}>
               {product.rating}&nbsp;
-              <img src="/star-icon.svg" alt="Рейтинг" className={styles['icon']}></img>
+              <img src="/star-icon.svg" alt="Рейтинг" className={styles['icon']} />
             </div>
           </div>
 

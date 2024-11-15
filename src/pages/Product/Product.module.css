@@ -105,3 +105,12 @@
   font-size: 24px;
   font-weight: 600;
 }
+.add-to-card.added {
+  border-radius: 5%;
+  width: 85px;
+  height: 65px;
+  background-color: gray;
+  cursor: default;
+  opacity: 0.8;
+  color: var(--white-color);
+}

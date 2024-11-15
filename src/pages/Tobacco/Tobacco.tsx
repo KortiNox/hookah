@@ -2,14 +2,14 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import Headling from '../../components/Headling/Headling';
 import { Search } from '../../components/Search/Search';
 import { PREFIX } from '../../helpers/API';
-import { Product } from '../../interfaces/product.interface';
+import { TobaccoInterface } from '../../interfaces/tobacco.interface';
 import styles from './Tobacco.module.css';
 import axios, { AxiosError } from 'axios';
 
 import { TobaccoList } from './TobaccoList/TobaccoList';
 
 export function Tobacco() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<TobaccoInterface[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | undefined>();
   const [filter, setFilter] = useState<string>();
@@ -22,7 +22,7 @@ export function Tobacco() {
     try {
       setIsLoading(true);
 
-      const { data } = await axios.get<Product[]>(`${PREFIX}/Tobacco`, {
+      const { data } = await axios.get<TobaccoInterface[]>(`${PREFIX}/Tobacco`, {
         params: { name },
       });
 
@@ -45,12 +45,12 @@ export function Tobacco() {
   return (
     <>
       <div className={styles['head']}>
-        <Headling>Tobacco</Headling>
+        <Headling>Black Bern Tobacco</Headling>
         <Search placeholder="Поиск табака" onChange={updateFilter}></Search>
       </div>
       <div>
         {/*error && <>{'Не найдено'}</>*/}
-        {!isLoading && products.length > 0 && <TobaccoList products={products} />}
+        {!isLoading && products.length > 0 && <TobaccoList Tobacco={products} />}
         {isLoading && <>Загрузка...</>}
         {!isLoading && products.length === 0 && <>Не найдено 2</>}
       </div>

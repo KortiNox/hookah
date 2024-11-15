@@ -2,10 +2,10 @@ import { TobaccoListProps } from './TobaccoList.props';
 import styles from './TobaccoList.module.css';
 import TobaccoCard from '../../../components/TobaccoCard/TobaccoCard';
 
-export function TobaccoList({ products }: TobaccoListProps): JSX.Element {
+export function TobaccoList({ Tobacco }: TobaccoListProps): JSX.Element {
   return (
     <div className={styles.wrapper}>
-      {products.map((p) => (
+      {Tobacco.map((p) => (
         <TobaccoCard
           key={p.id}
           id={p.id}
