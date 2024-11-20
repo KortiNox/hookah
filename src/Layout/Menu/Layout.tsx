@@ -20,7 +20,7 @@ export function Layout() {
         <div className={styles['user']}>
           <img className={styles['avatar']} src="/avatar.svg" alt="avatar"></img>
           <div className={styles['name']}>Анонимный Пользватель</div>
-          <div className={styles['email']}>TG: KortNox</div>
+          <div className={styles['email']}>TG: KortiNox</div>
         </div>
 
         <div className={styles['menu']}>

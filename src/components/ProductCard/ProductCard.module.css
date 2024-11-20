@@ -49,6 +49,7 @@
   padding: 3px 8px;
   border-radius: 10px;
   font-size: 14px;
+  color: var(--text-color);
 }
 
 .add-to-card {
