@@ -38,7 +38,7 @@ export function Cart() {
   };
 
   return (
-    <>
+    <div className={styles['container']}>
       <Headling className={styles['headling']}>Избранное </Headling>
       {items.map((i) => {
         const product = cartProducts.find((p) => p.id === i.id);
@@ -48,6 +48,6 @@ export function Cart() {
         }
         return <CartItem key={product.id} id={i.id} {...product} />;
       })}
-    </>
+    </div>
   );
 }

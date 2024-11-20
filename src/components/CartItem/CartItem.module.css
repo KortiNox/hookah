@@ -46,3 +46,57 @@
 .remove:hover {
   background-color: var(--primary-color-hover);
 }
+
+/* Адаптивные стили */
+
+@media (max-width: 768px) {
+  .item {
+    flex-direction: column; /* Изменяем направление на колонку для меньших экранов */
+    align-items: center; /* Центрируем элементы */
+    max-width: 100%; /* Убираем ограничение по ширине */
+  }
+
+  .image {
+    width: 80px; /* Уменьшаем размер изображения */
+    height: 80px;
+  }
+
+  .name {
+    font-size: 20px; /* Уменьшаем размер шрифта */
+  }
+
+  .price {
+    font-size: 20px; /* Уменьшаем размер шрифта */
+  }
+
+  .remove {
+    width: 100px; /* Уменьшаем ширину кнопки */
+    height: 40px; /* Уменьшаем высоту кнопки */
+    font-size: 18px; /* Уменьшаем размер шрифта */
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    gap: 10px; /* Уменьшаем отступы между элементами */
+  }
+
+  .image {
+    width: 80px; /* Уменьшаем размер изображения */
+    height: 80px;
+  }
+
+  .name {
+    font-size: 22px; /* Уменьшаем размер шрифта */
+  }
+
+  .price {
+    font-size: 22px; /* Уменьшаем размер шрифта */
+  }
+
+  .remove {
+    width: 100px; /* Уменьшаем ширину кнопки */
+    height: 35px; /* Уменьшаем высоту кнопки */
+    font-size: 16px; /* Уменьшаем размер шрифта */
+  }
+}

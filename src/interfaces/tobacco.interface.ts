@@ -4,4 +4,5 @@ export interface TobaccoInterface {
   description: string[];
   price: number;
   image: string;
+  categoryID: string;
 }

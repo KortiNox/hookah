@@ -67,3 +67,122 @@
   padding: 10px 30px;
   width: 100%;
 }
+
+/* Адаптивные стили */
+
+/* Адаптивные стили */
+
+@media (max-width: 1200px) {
+  .sidebar {
+    padding: 20px;
+  }
+
+  .content {
+    padding: 10px 20px;
+    display: flex; /* Добавлено для центрирования */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали (если нужно) */
+    flex-wrap: wrap; /* Позволяет карточкам переноситься на следующую строку */
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .email {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .layout {
+    gap: 20px;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--separator-color);
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .email {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .sidebar {
+    padding: 15px;
+  }
+  .exit {
+    margin-top: 30px;
+  }
+
+  .menu {
+    gap: 20px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .email {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sidebar {
+    padding: 10px;
+  }
+
+  .menu {
+    gap: 15px;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .email {
+    font-size: 18px;
+  }
+}

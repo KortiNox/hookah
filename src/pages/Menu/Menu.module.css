@@ -2,3 +2,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 450px) {
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

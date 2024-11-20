@@ -4,6 +4,8 @@
   gap: 30px;
   width: 100%;
   max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
 }
 .form {
   display: flex;
@@ -39,4 +41,33 @@
   background: rgb(200, 64, 64);
   color: white;
   padding: 20px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .login {
+    padding: 15px;
+  }
+
+  .links {
+    font-size: 14px;
+  }
+
+  .field label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login {
+    gap: 20px;
+  }
+
+  .links {
+    font-size: 12px;
+  }
+
+  .error {
+    padding: 15px;
+  }
 }

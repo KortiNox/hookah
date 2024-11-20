@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react';
-import Headling from '../../components/Headling/Headling';
+
 import { Search } from '../../components/Search/Search';
 import { PREFIX } from '../../helpers/API';
 import { TobaccoInterface } from '../../interfaces/tobacco.interface';
@@ -13,6 +13,7 @@ export function Tobacco() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | undefined>();
   const [filter, setFilter] = useState<string>();
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   useEffect(() => {
     getMenu(filter);
@@ -42,15 +43,22 @@ export function Tobacco() {
     setFilter(e.target.value);
   };
 
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    alert(category);
+  };
+
+  const filteredProducts = products.filter((product) => {
+    return selectedCategory === 'all' || product.categoryID === selectedCategory;
+  });
   return (
     <>
       <div className={styles['head']}>
-        <Headling>Black Bern Tobacco</Headling>
         <Search placeholder="Поиск табака" onChange={updateFilter}></Search>
       </div>
       <div>
         {/*error && <>{'Не найдено'}</>*/}
-        {!isLoading && products.length > 0 && <TobaccoList Tobacco={products} />}
+        {!isLoading && products.length > 0 && <TobaccoList Tobacco={filteredProducts} />}
         {isLoading && <>Загрузка...</>}
         {!isLoading && products.length === 0 && <>Не найдено 2</>}
       </div>
@@ -59,3 +67,8 @@ export function Tobacco() {
 }
 
 export default Tobacco;
+//
+//
+//
+//
+//
