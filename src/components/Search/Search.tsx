@@ -16,7 +16,7 @@ export const Search = forwardRef<HTMLInputElement, SearchProps>(function Input(
         })}
         {...props}
       />
-      <img className={styles['icon']} src="/search-icon.svg" alt="search"></img>
+      <img className={styles['icon']} src="search-icon.svg" alt="search"></img>
     </div>
   );
 });

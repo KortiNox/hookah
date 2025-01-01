@@ -16,12 +16,12 @@ export function TobaccoBigCard() {
           <p>Цена забивки (20гр) - {weed.price} руб</p>
         </div>
         <div className={styles['card']}>
-          <div className={styles['head']} style={{ backgroundImage: `url('${weed.image}')` }}>
+          <div className={styles['head']} style={{ backgroundImage: `url('../${weed.image}')` }}>
             <div className={styles['price']}>{weed.price}</div>
 
             <div className={styles['rating']}>
               {weed.rating}&nbsp;
-              <img src="/star-icon.svg" alt="Рейтинг" className={styles['icon']} />
+              <img src="../star-icon.svg" alt="Рейтинг" className={styles['icon']} />
             </div>
           </div>
 

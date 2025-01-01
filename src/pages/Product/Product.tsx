@@ -33,7 +33,7 @@ export function Product() {
           <p>Цена забивки (20гр) - {product.price} руб</p>
         </div>
         <div className={styles['card']}>
-          <div className={styles['head']} style={{ backgroundImage: `url('${product.image}')` }}>
+          <div className={styles['head']} style={{ backgroundImage: `url('../${product.image}')` }}>
             <div className={styles['price']}>{product.price}</div>
             <button
               className={`${styles['add-to-card']} ${isInCart ? styles['added'] : ''}`} // Применяем класс disabled
@@ -46,7 +46,7 @@ export function Product() {
             </button>
             <div className={styles['rating']}>
               {product.rating}&nbsp;
-              <img src="/star-icon.svg" alt="Рейтинг" className={styles['icon']} />
+              <img src="../star-icon.svg" alt="Рейтинг" className={styles['icon']} />
             </div>
           </div>
 

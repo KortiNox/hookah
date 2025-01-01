@@ -21,7 +21,7 @@ function ProductCard(props: ProductCartProps) {
   };
 
   return (
-    <Link to={`/product/${props.id}`} className={styles['link']}>
+    <Link to={`/hookah/product/${props.id}`} className={styles['link']}>
       <div className={styles['card']}>
         <div className={styles['head']} style={{ backgroundImage: `url('${props.image}')` }}>
           <div className={styles['price']}>{props.price}</div>
@@ -33,7 +33,7 @@ function ProductCard(props: ProductCartProps) {
           </button>
           <div className={styles['rating']}>
             {props.rating}&nbsp;
-            <img src="/star-icon.svg" alt="Рейтинг" className={styles['icon']} />
+            <img src="star-icon.svg" alt="Рейтинг" className={styles['icon']} />
           </div>
         </div>
 

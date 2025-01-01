@@ -47,7 +47,7 @@ export function Login() {
 
   const sendLogin = async (email: string, password: string) => {
     if (!isFormFilled) {
-      navigate('/');
+      navigate('/hookah/');
       return;
     }
     try {
@@ -58,7 +58,7 @@ export function Login() {
       console.log(data);
     } catch (e) {
       if (e instanceof AxiosError) {
-        navigate('/');
+        navigate('/hookah/');
         console.log(e);
         console.log(error);
         setError(e.response?.data?.message);
@@ -89,7 +89,7 @@ export function Login() {
       </form>
       <div className={styles['links']}>
         <div>Нет аккаунта?</div>
-        <Link to="/auth/register">Зарегистрироваться</Link>
+        <Link to="/hookah/auth/register">Зарегистрироваться</Link>
       </div>
     </div>
   );

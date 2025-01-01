@@ -48,6 +48,8 @@ export function Tobacco() {
     alert(category);
   };
 
+  console.log(handleCategoryChange);
+
   const filteredProducts = products.filter((product) => {
     return selectedCategory === 'all' || product.categoryID === selectedCategory;
   });

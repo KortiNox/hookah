@@ -15,7 +15,7 @@ function CartItem(props: CartItemProps): JSX.Element {
   const navigate = useNavigate();
 
   const handleDetailsClick = () => {
-    navigate(`/product/${props.id}`); // маршрут для продукта
+    navigate(`/hookah/product/${props.id}`); // маршрут для продукта
   };
 
   return (
@@ -35,7 +35,7 @@ function CartItem(props: CartItemProps): JSX.Element {
       </div>
 
       <div className={styles['rating']}>
-        <img src="/star-icon.svg" alt="Рейтинг" className={styles['icon']}></img>
+        <img src="star-icon.svg" alt="Рейтинг" className={styles['icon']}></img>
       </div>
     </div>
   );

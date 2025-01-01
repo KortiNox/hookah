@@ -5,7 +5,7 @@ import styles from './Register.module.css';
 export function Register() {
   const navigate = useNavigate();
   const handleLogout = () => {
-    navigate('/auth/login');
+    navigate('/hookah/auth/login');
   };
 
   return (

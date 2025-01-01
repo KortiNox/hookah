@@ -11,44 +11,44 @@ export function Layout() {
   const items = useSelector((s: RootState) => s.cart.items);
 
   const handleLogout = () => {
-    navigate('/auth/login');
+    navigate('hookah/auth/login');
   };
 
   return (
     <div className={styles['layout']}>
       <div className={styles['sidebar']}>
         <div className={styles['user']}>
-          <img className={styles['avatar']} src="/avatar.svg" alt="avatar"></img>
+          <img className={styles['avatar']} src="avatar.svg" alt="avatar"></img>
           <div className={styles['name']}>Анонимный Пользватель</div>
           <div className={styles['email']}>TG: KortiNox</div>
         </div>
 
         <div className={styles['menu']}>
           <NavLink
-            to="/"
+            to="hookah/"
             className={({ isActive }) => cn(styles['link'], { [styles.active]: isActive })}
           >
-            <img className={styles['icon']} src="/menu-icon.svg" alt="menu-svg"></img>
+            <img className={styles['icon']} src="menu-icon.svg" alt="menu-svg"></img>
             Миксы
           </NavLink>
           <NavLink
-            to="/tobacco"
+            to="hookah/tobacco"
             className={({ isActive }) => cn(styles['link'], { [styles.active]: isActive })}
           >
-            <img className={styles['icon']} src="/tobacco.svg" alt="cart-svg"></img>
+            <img className={styles['icon']} src="tobacco.svg" alt="cart-svg"></img>
             Табак
           </NavLink>
 
           <NavLink
-            to="/cart"
+            to="hookah/cart"
             className={({ isActive }) => cn(styles['link'], { [styles.active]: isActive })}
           >
-            <img className={styles['icon']} src="/cart-icon.svg" alt="cart-svg"></img>
+            <img className={styles['icon']} src="cart-icon.svg" alt="cart-svg"></img>
             Закладки {items.reduce((acc, item) => (acc += item.count), 0)}
           </NavLink>
         </div>
         <Button className={styles['exit']} onClick={handleLogout}>
-          <img className={styles['icon']} src="/exit-icon.svg" alt="exit-svg"></img>
+          <img className={styles['icon']} src="exit-icon.svg" alt="exit-svg"></img>
           Выход
         </Button>
       </div>

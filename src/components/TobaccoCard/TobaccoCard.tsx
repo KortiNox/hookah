@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function TobaccoCard(props: TobaccoCartProps) {
   return (
-    <Link to={`/tobacco/${props.id}`} className={styles['link']}>
+    <Link to={`/hookah/tobacco/${props.id}`} className={styles['link']}>
       <div className={styles['card']}>
         <div className={styles['head']} style={{ backgroundImage: `url('${props.image}')` }}></div>
         <div className={styles['footer']}>

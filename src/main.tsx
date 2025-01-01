@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: '/',
+        path: '/hookah/',
         element: (
           <Suspense fallback={<>'Загрузка...'</>}>
             <Menu />
@@ -32,15 +32,15 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/cart',
+        path: '/hookah/cart',
         element: <Cart />,
       },
       {
-        path: '/tobacco',
+        path: '/hookah/tobacco',
         element: <Tobacco />,
       },
       {
-        path: '/tobacco/:id',
+        path: '/hookah/tobacco/:id',
         element: <TobaccoBigCard />,
         errorElement: <>Ошибка </>,
         loader: async ({ params }) => {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: '/product/:id',
+        path: '/hookah/product/:id',
         element: <Product />,
         errorElement: <>Ошибка </>,
         loader: async ({ params }) => {
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
     element: <ErrorPage />,
   },
   {
-    path: '/auth',
+    path: '/hookah/auth',
     element: <AuthLayout />,
     children: [
       {
